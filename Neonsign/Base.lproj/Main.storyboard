@@ -1,24 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ns-D4-nql">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Neonsign" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZL-EN-gy3">
+                                <rect key="frame" x="148.66666666666666" y="418" width="116.66666666666666" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tZL-EN-gy3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FcJ-er-hQt"/>
+                            <constraint firstItem="tZL-EN-gy3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ynw-AE-QFM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RuE-Vf-nET">
+                        <barButtonItem key="rightBarButtonItem" title="설정" id="hp4-Ar-4Jb">
+                            <connections>
+                                <segue destination="Ina-dy-ZJA" kind="show" id="Tqr-Aa-ahr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentsLabel" destination="tZL-EN-gy3" id="Xzk-Wv-cl1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="220" y="-216"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="j8T-ST-DuC">
+            <objects>
+                <viewController id="Ina-dy-ZJA" customClass="SettingViewController" customModule="Neonsign" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cgo-zW-m8A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oM9-gl-NRp">
+                                <rect key="frame" x="24" y="112" width="366" height="69.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전광판에 표시할 글자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-bb-05G">
+                                        <rect key="frame" x="0.0" y="0.0" width="141.33333333333334" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전광판에 표시할 글자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIC-cf-eXn">
+                                        <rect key="frame" x="0.0" y="35.333333333333343" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HIC-cf-eXn" firstAttribute="leading" secondItem="oM9-gl-NRp" secondAttribute="leading" id="B2F-Fh-1vm"/>
+                                    <constraint firstAttribute="trailing" secondItem="HIC-cf-eXn" secondAttribute="trailing" id="Edy-UO-e3I"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-14-RTC">
+                                <rect key="frame" x="24" y="216.33333333333337" width="366" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="텍스트 색상 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-9q-flC">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Pc-M5-qTs">
+                                        <rect key="frame" x="0.0" y="35.333333333333314" width="238" height="56.666666666666657"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7j-Wi-9KI">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="56.666666666666664"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="yellow_circle"/>
+                                                <connections>
+                                                    <action selector="tabTextColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="Bwk-1g-Aze"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hB-7E-oWR">
+                                                <rect key="frame" x="85.666666666666657" y="0.0" width="66.666666666666657" height="56.666666666666664"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="purple_circle"/>
+                                                <connections>
+                                                    <action selector="tabTextColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="TKS-9S-6Kj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyv-sq-bD2">
+                                                <rect key="frame" x="171.33333333333334" y="0.0" width="66.666666666666657" height="56.666666666666664"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="green_circle"/>
+                                                <connections>
+                                                    <action selector="tabTextColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="c3r-M4-kF3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fNb-uH-YIx">
+                                <rect key="frame" x="24" y="343.33333333333331" width="366" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배경 색상 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-EC-350">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="UJ7-Xf-MC3">
+                                        <rect key="frame" x="0.0" y="35.333333333333371" width="238" height="56.666666666666657"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkV-ik-zqu">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="56.666666666666664"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="검정색"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="black_circle"/>
+                                                <connections>
+                                                    <action selector="tabBackgroundColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="uCq-pF-OE9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rt-dN-sGh">
+                                                <rect key="frame" x="85.666666666666657" y="0.0" width="66.666666666666657" height="56.666666666666664"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="파랑색"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="blue_circle"/>
+                                                <connections>
+                                                    <action selector="tabBackgroundColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="S95-PE-KSB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ti9-Dh-qZ9">
+                                                <rect key="frame" x="171.33333333333334" y="0.0" width="66.666666666666657" height="56.666666666666664"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="주황색"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="orange_circle"/>
+                                                <connections>
+                                                    <action selector="tabBackgroundColorButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="F5F-1m-bnX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl6-UR-TAD">
+                                <rect key="frame" x="183" y="459.33333333333331" width="48.333333333333343" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                                <connections>
+                                    <action selector="tabSaveButton:" destination="Ina-dy-ZJA" eventType="touchUpInside" id="3gE-VU-aJE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ur8-T0-2RD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fl6-UR-TAD" firstAttribute="top" secondItem="fNb-uH-YIx" secondAttribute="bottom" constant="24" id="10w-h0-4X8"/>
+                            <constraint firstItem="oM9-gl-NRp" firstAttribute="leading" secondItem="Ur8-T0-2RD" secondAttribute="leading" constant="24" id="9Ll-vI-7WT"/>
+                            <constraint firstItem="oM9-gl-NRp" firstAttribute="top" secondItem="Ur8-T0-2RD" secondAttribute="top" constant="24" id="BHO-Aw-OED"/>
+                            <constraint firstItem="Ur8-T0-2RD" firstAttribute="trailing" secondItem="oM9-gl-NRp" secondAttribute="trailing" constant="24" id="J5M-Ep-uoR"/>
+                            <constraint firstItem="Ur8-T0-2RD" firstAttribute="trailing" secondItem="fNb-uH-YIx" secondAttribute="trailing" constant="24" id="Tso-6M-uf7"/>
+                            <constraint firstItem="fNb-uH-YIx" firstAttribute="top" secondItem="sfO-14-RTC" secondAttribute="bottom" constant="35" id="dGF-jL-Itb"/>
+                            <constraint firstItem="sfO-14-RTC" firstAttribute="top" secondItem="oM9-gl-NRp" secondAttribute="bottom" constant="35" id="fxk-J3-OV5"/>
+                            <constraint firstItem="Ur8-T0-2RD" firstAttribute="trailing" secondItem="sfO-14-RTC" secondAttribute="trailing" constant="24" id="hPh-iM-PRF"/>
+                            <constraint firstItem="sfO-14-RTC" firstAttribute="leading" secondItem="Ur8-T0-2RD" secondAttribute="leading" constant="24" id="mvc-VZ-gvt"/>
+                            <constraint firstItem="fNb-uH-YIx" firstAttribute="leading" secondItem="Ur8-T0-2RD" secondAttribute="leading" constant="24" id="p4W-Tq-dCu"/>
+                            <constraint firstItem="Fl6-UR-TAD" firstAttribute="centerX" secondItem="fNb-uH-YIx" secondAttribute="centerX" id="wPG-3d-PPb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="설정" id="Wc3-D6-0OX"/>
+                    <connections>
+                        <outlet property="black_button" destination="lkV-ik-zqu" id="f8F-8a-ehf"/>
+                        <outlet property="blue_button" destination="5Rt-dN-sGh" id="F7d-Db-rTc"/>
+                        <outlet property="green_button" destination="Xyv-sq-bD2" id="qvf-Pe-FUl"/>
+                        <outlet property="orange_button" destination="Ti9-Dh-qZ9" id="4dx-eP-GJ7"/>
+                        <outlet property="purple_button" destination="0hB-7E-oWR" id="no7-LC-s9k"/>
+                        <outlet property="textField" destination="HIC-cf-eXn" id="YsM-Rc-VNU"/>
+                        <outlet property="yellow_button" destination="W7j-Wi-9KI" id="i8A-xf-m8W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fsm-GH-dpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011.5942028985507" y="-216.29464285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oHN-fE-Rnw">
+            <objects>
+                <navigationController id="4Ns-D4-nql" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rik-Cz-OaH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mVU-Vl-NBt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8G-hp-Quq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-587" y="-216"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="black_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="blue_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="green_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="orange_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="purple_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="yellow_circle" width="42.666667938232422" height="42.666667938232422"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
